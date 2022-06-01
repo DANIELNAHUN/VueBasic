@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+body{
+    background-color: #44C0DA;
+}
+
+ header{
+    display: flex;
+    margin: 0 0 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #9C00F9;
+    color: aliceblue;
+}
+
+
+.headerimg{
+    max-height: 100px;
+    margin-left: auto;
+}
+.headerimg > img{
+    width: 30px;
+    height: 30px;
+}
+.headerimg > img:hover{
+    width: 31.7px;
+    height: 31.7px;
+    box-shadow: 0px 0px 5px 5px #DAC044;
+}
+.headerimg > h1{
+    margin: auto; 
+    text-align: center;
+}
+
+
+.container{
+    margin: auto;
+    padding: 10px 25px;
+    width: 300px;
+    height: 400px;
+    background-color: aliceblue;
+    text-align:start;
+}
