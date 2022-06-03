@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,10 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <title>Proyecto Vue</title>
 </head>
+
 <body>
     <header>
-        <h1>Mi primer Proyecto</h1>        
+        <h1>Mi primer Proyecto</h1>
         <div class="headerimg">
             <h4>links:</h4>
             <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github">
@@ -19,26 +21,31 @@
         </div>
     </header>
     <main>
-        <div id="note" class="container">
+        <div id="todo-list" class="container">
             <h1>Todo App</h1>
             <div>
-                <input type="text" placeholder="Add your new note" v-model="notecontent">
-                <button @click="estado">+</button>
+                <input type="text" placeholder="Add your new note" v-model="todoNew.text">
+                <button @click="addTodoItem">+</button>
             </div>
-            <div v-if="activo">
-                <h3> se dice: {{ notecontent }}</h3>
+
+            <div v-for="(item, i) in todoList" :key="i">
+                <div>{{item.text}}</div>
+                <div>
+                    <button>E</button>
+                    <button>D</button>
+
+                </div>
             </div>
-            
+
         </div>
-        
+
     </main>
 
     <footer>
-    </footer>  
-    <script src="/components/note.js">
-        const store = new Vuex.Store({
-            notita 
-        })
+    </footer>
+    <script src="components/note.js">
+
     </script>
 </body>
+
 </html>
