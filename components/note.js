@@ -1,7 +1,7 @@
 const note = new Vue({
     el: "#note",
     data:{
-        notecontent: 'yaoki',
+        notecontent: '',
         activo: true
     },
     methods:{
