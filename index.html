@@ -29,10 +29,10 @@
             </div>
 
             <div v-for="(item, i) in todoList" :key="i">
-                <div>{{item.text}}</div>
+                <div>{{item.id}} {{item.text}}</div>
                 <div>
                     <button>E</button>
-                    <button>D</button>
+                    <button @click="deleteTodoItem(item.id)">D</button>
 
                 </div>
             </div>
