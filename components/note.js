@@ -2,8 +2,8 @@ const app = new Vue({
   el: "#todo-list",
   data: {
     todoNew: {
-      text: 'New',
-      activo: true,
+      text: '',
+      stateitem: true,
       id: null,
     },
     activo: true,
@@ -19,8 +19,8 @@ const app = new Vue({
     addTodoItem () {
       const itemId = this.todoList.length
       const itemData = {
-        text: this.todoNew.text,
-        activo: true,
+        text: this.todoNew.text || "Add text",
+        stateitem: true,
         id: itemId,
       }
 
@@ -32,11 +32,29 @@ const app = new Vue({
       const itemId = id
       if (itemId > -1) {
         this.todoList.splice(itemId, 1);
-        console.log("borrando: " + itemId + " longitud "+ this.todoList.length)
-      }      
+      };
+      this.todoNew.text = ""      
     },
     editTodoItem (id){
-      
+      const itemId = id
+      const textList = this.todoList[itemId].text
+      this.todoList.splice(itemId, 1,{
+        text: textList,
+        estadoitem: false,
+        id: id,
+      });
+    },
+    confirmTodoItem(item){
+
+      const itemId = item.id
+      const itemData = {
+        text: item.text,
+        stateitem: true,
+        id: itemId,
+      }
+      this.todoList.splice(itemId,1,itemData)
+      this.todoNew.text = ""
+
     }    
   }
 })
