@@ -31,11 +31,11 @@ header{
     max-height: 60px;
     margin-left: auto;
 }
-.header-img a img{
+.header-img img{
     width: 30px;
     height: 30px;
 }
-.header-img a img:hover{
+.header-img img:hover{
     width: 31.7px;
     height: 31.7px;
     box-shadow: 0px 0px 5px 5px #DEFF0A;
