@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuex@4.0.2/dist/vuex.global.js"></script>
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <title>Vue Proyect</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuex@4.0.2/dist/vuex.global.js"></script>
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <title>Vue Proyect</title>
 </head>
 
 <body>
-    <header>
-        <h1>To Do List</h1>
-        <div class="header-img">
-            <h4>links:</h4>
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkdledin">
+  <header class="todo-app-header">
+    <div class="todo-app-header__title">
+      <h1>To Do List</h1>
+    </div>
+    <div class="todo-app-header__social-network">
+      <h4>links:</h4>
+      <div>
+        <a target="_blank" href="https://github.com/DANIELNAHUN?tab=repositories">
+          <img height="25px" width="25px" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github">
+        </a>
+        <img height="25px" width="25px" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkdledin">
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="todo-list" class="container">
+      <h1>Todo App</h1>
+      <div class="container-todo-create">
+        <input type="text" v-model="todoNew.text" required>
+        <label for="">New ToDo</label>
+        <button @click="addTodoItem">
+          <img class="add" src="src/add.png"></button>
+      </div>
+      <div class="vacio" v-if="todoList.length <= 0">NO RECORD FOUND</div>
+      <div v-else class="container-todo-list" v-for="(item, i) in todoList" :key="i">
+        <div v-if="todoList[i].stateitem">{{item.text}}</div>
+        <div class="input-todo" v-else>
+          <input type="text" placeholder="" v-model="item.text" required>
+          <label for="">Edit Note</label>
         </div>
-    </header>
-    <main>
-        <div id="todo-list" class="container">
-            <h1>Todo App</h1>
-            <div class="container-todo-create">
-                <input type="text" v-model="todoNew.text" required>
-                <label for="">New ToDo</label>
-                <button @click="addTodoItem">
-                    <img class="add" src="src/add.png"></button>
-            </div>
-            <div class="vacio" v-if="todoList.length <= 0">NO RECORD FOUND</div>
-            <div v-else class="container-todo-list" v-for="(item, i) in todoList" :key="i">
-                <div v-if="todoList[i].stateitem">{{item.text}}</div>               
-                <div class="input-todo" v-else>
-                    <input  type="text" placeholder="" v-model="item.text" required>
-                    <label for="">Edit Note</label>
-                </div>                         
-                <div class="btn-todoList">
-                    <button v-if="todoList[i].stateitem" @click="editTodoItem(i)">
-                        <img class="edit" src="src/edit.png"></button>
-                    <button v-else @click="confirmTodoItem(item)">
-                        <img class="confirm" src="src/confirm.png"></button>
-                    <button @click="deleteTodoItem(i)">
-                        <img class="delete" src="src/delete.png"></button>
-                </div>
-            </div>
+        <div class="btn-todoList">
+          <button v-if="todoList[i].stateitem" @click="editTodoItem(i)">
+            <img class="edit" src="src/edit.png"></button>
+          <button v-else @click="confirmTodoItem(item)">
+            <img class="confirm" src="src/confirm.png"></button>
+          <button @click="deleteTodoItem(i)">
+            <img class="delete" src="src/delete.png"></button>
         </div>
-    </main>
-    <footer>
-    </footer>
-    <script src="components/note.js">
+      </div>
+    </div>
+  </main>
+  <footer>
+  </footer>
+  <script src="components/note.js">
 
-    </script>
+  </script>
 </body>
 
 </html>
