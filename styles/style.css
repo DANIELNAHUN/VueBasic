@@ -5,58 +5,33 @@
 }
 
 body {
-    background-color: #44C0DA;
+    background-color: #e9f3f5;
     width: 100%;
     height: 100%;
 }
 
+.todo-app-header__social-network img {
+    margin: 8px 5px;
+ }
+ .todo-app-header__social-network img:hover {
+     width: 30px;
+     height: 30px;
+     transition: .3s all;
+ }
+
 .todo-app-header {
-    background-color: #9C00F9;
+    background-color: #452f50;
     height: 68px;
     position: relative;
     padding: 12px;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
 }
 
 .todo-app-header__title {
     text-align: center;
     color: white;
-}
-
-.todo-app-header__social-network {
-    position: absolute;
-    right: 12px;
-    top: 8px;
-    color: white;
-}
-.todo-app-header__social-network img {
-   margin: 0px 4px;
-}
-.todo-app-header__social-network img:hover {
-    width: 30px;
-    height: 30px;
-    transition: .3s all;
-    box-shadow: 0px 0px 5px 5px #DEFF0A;
-}
-
-.header-img {
-    max-height: 60px;
-    margin-left: auto;
-}
-
-.header-img img {
-    width: 30px;
-    height: 30px;
-}
-
-.header-img img:hover {
-    width: 31.7px;
-    height: 31.7px;
-    box-shadow: 0px 0px 5px 5px #DEFF0A;
-}
-
-.header-img>h1 {
-    margin: auto;
-    text-align: center;
 }
 
 .container-todo-create {
@@ -69,56 +44,11 @@ body {
     position: relative;
 }
 
-.container-todo-create button {
-    margin-left: auto;
-    background: none;
-    border: 0px;
-}
-
-.container-todo-create button img {
-    width: 20px;
-    height: 20px;
-}
-
-.container-todo-create input {
-    width: 800%;
-    height: 100%;
-    outline: none;
-    border: none;
-    font-size: 18px;
-    border-bottom: 2px solid #CBD1B5;
-}
-
-.container-todo-create label {
-    margin-top: 15px;
-    position: absolute;
-    left: 15px;
-    bottom: 20px;
-    color: silver;
-    font-size: 18px;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.container-todo-create input:focus~label,
-.container-todo-create input:valid~label {
-    transform: translateY(-20px);
-    font-size: 18px;
-    color: #566138;
-}
-
-.container-todo-create input:focus,
-.container-todo-create input:valid {
-    border-color: #b49f28;
-    color: #566138;
-}
-
 .container {
     margin: auto;
     padding: 10px 25px;
-    width: 60%;
-    height: 600px;
-    background-color: aliceblue;
+    width: 80%;
+    height: 100%;
     text-align: start;
     overflow: hidden;
 }
@@ -136,8 +66,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #E7EDCF;
-    border-bottom: 5px solid #CBD1B5;
 }
 
 .btn-todoList {
@@ -147,41 +75,6 @@ body {
     white-space: nowrap;
 }
 
-.btn-todoList button {
-    background: none;
-    border: 0px;
-}
-
-.btn-todoList button img {
-    width: 20px;
-    height: 20px;
-}
-
-.edit:hover {
-    width: 21.7px;
-    height: 21.7px;
-    box-shadow: 0px 0px 5px 5px #CCD651;
-}
-
-.delete:hover {
-    width: 21.7px;
-    height: 21.7px;
-    box-shadow: 0px 0px 5px 5px #9E2727;
-}
-
-.confirm:hover {
-    width: 21.7px;
-    height: 21.7px;
-    box-shadow: 0px 0px 5px 5px #59B94D;
-}
-
-.add:hover {
-    width: 21.7px;
-    height: 21.7px;
-    box-shadow: 0px 0px 5px 5px #3C4FAC;
-
-}
-
 .input-todo {
     position: relative;
     padding: 1px 5px;
@@ -189,49 +82,4 @@ body {
     width: 100%;
     margin: 0%;
     margin-top: 0px;
-}
-
-.input-todo input {
-    width: 85%;
-    height: 38px;
-    background: none;
-    outline: none;
-    border: none;
-    font-size: 15px;
-    border-bottom: 2px solid #535253;
-}
-
-.input-todo label {
-    margin-top: 15px;
-    position: absolute;
-    left: 15px;
-    bottom: 5px;
-    color: rgb(76, 32, 85);
-    font-size: 12px;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.input-todo input:focus~label,
-.input-todo input:valid~label {
-    transform: translateY(-20px);
-    font-size: 13px;
-    color: #4f4f5a8e;
-}
-
-.input-todo input:focus,
-.input-todo input:valid {
-    border-color: #12042e;
-    color: #0a0a3ac9;
-}
-
-.empty {
-    font-size: 20px;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-footer {
-    width: 100%;
-    height: 20%;
 }
